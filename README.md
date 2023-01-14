@@ -1,25 +1,35 @@
 # learning-docker
 learning docker new course from linkedin learning
 
-## create conainer hello-worlds like this
-`docker container create hello-world:linux `
 
+## starting docker container in longer way
 
-## see running containers
-` docker ps `
+**create conainer hello-worlds like this** </br>
 
-## see all the containers created
-` docker ps --all `
+```dj
+docker container create hello-world:linux
+```
 
-## start container by their id
-` docker container start then_docker_long_id `
+**see running containers** </br>
+```dj 
+docker ps 
+```
 
-## see the docker log
-` docker logs then_docker_id_or_part_of_the_id `
+**see all the containers created** </br>
+```dj
+docker ps --all
+```
+**start container by their id** </br>
+```dj
+docker container start then_docker_long_id
+```
 
-## start container by their id in attached mode
-` docker container start --attach then_docker_long_id `
+**see the docker log** </br>
+```dj
+docker logs then_docker_id_or_part_of_the_id
+```
 
-
-### testing copyable code
-``` print helloworld ```
+**start container by their id in attached mode** </br>
+```dj
+docker container start --attach then_docker_long_id
+```
