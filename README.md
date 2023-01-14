@@ -33,3 +33,33 @@ docker logs then_docker_id_or_part_of_the_id
 ```dj
 docker container start --attach then_docker_long_id
 ```
+
+
+
+## create docker container in short way
+
+** just use run for creating docker container and use linux for ** </br>
+
+```dj
+docker run hello-world:linux
+```
+
+docker run =
+docker container create
+(+) docker container start
+(+) docker container attach
+
+## create docker container from Dockerfile
+
+** first use build then the name of the container that you want to give after that Dockerfile name, if your not using the default file name which is Dockerfile ** </br>
+
+```dj
+docker build -t container_name . or /path/to/some where
+docker build -t container_name -f or --file Dockerfile_name_if_notusing_the_default_name
+```
+
+** then run the container **
+
+```dj
+docker run name_of_the_container
+```
