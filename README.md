@@ -38,7 +38,7 @@ docker container start --attach then_docker_long_id
 
 ## create docker container in short way
 
-** just use run for creating docker container and use linux for ** </br>
+**just use run for creating docker container and use linux for** </br>
 
 ```dj
 docker run hello-world:linux
@@ -51,15 +51,26 @@ docker container create
 
 ## create docker container from Dockerfile
 
-** first use build then the name of the container that you want to give after that Dockerfile name, if your not using the default file name which is Dockerfile ** </br>
+**first use build then the name of the container that you want to give after that Dockerfile name, if your not using the default file name which is Dockerfile** </br>
 
 ```dj
 docker build -t container_name . or /path/to/some where
 docker build -t container_name -f or --file Dockerfile_name_if_notusing_the_default_name
 ```
 
-** then run the container **
+**then run the container**
 
 ```dj
 docker run name_of_the_container
 ```
+
+
+**using another build with serverdocker file this time slight chnage in command**
+
+```dj
+docker build --file server.Dockerfile --tag name_of_container .
+```
+
+**don't use docker run container_name when the container is server or never stops
+otherwise it will hang**
+
