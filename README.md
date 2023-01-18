@@ -95,8 +95,56 @@ docker exec container_id date
 **if you want a interactive bash shell for the container like
 we don in postgres use the following command** </br>
 
-** to exit out of the interactive terminal press ctr + d** </br>
+**to exit out of the interactive terminal press ctr + d** </br>
 
 ```dj
 docker exec --interactive --tty container_id bash
+```
+
+
+**stop unnessesary docker through stop command that takes times little bit** </br>
+```dj
+docker stop docker_id
+```
+
+**to stop forcefully and faster that can cause data loss type the following**
+
+```dj
+docker stop -t 0 docker_id
+```
+
+**docker rm comand removes only stopped containers**</br>
+
+```dj
+docker rm container_id
+```
+
+**to remove running container** </br>
+```dj
+docker rm -f container_id
+```
+
+**to get all the id of container in the docker list**
+
+```dj
+docker ps -aq
+```
+
+**to delete all the container in the list in linux system** </br>
+```dj
+docker ps -aq | xargs docker rm 
+
+
+**to see all the docker images** </br>
+
+```dj
+docker images
+```
+
+**remove or force to remove images, if the docker is running stop it 
+first then remove** </br>
+
+```dj
+docker rmi image_name
+docker rmi -r image_name
 ```
