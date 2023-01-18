@@ -148,3 +148,21 @@ first then remove** </br>
 docker rmi image_name
 docker rmi -r image_name
 ```
+
+## binding port to docker
+
+**you can name the contianer while running, then you don't have to use id
+all the time you can use the name instead** </br>
+
+```dj
+docker run -d --name name_of_the_image_you_want_to_name name_of_the_image_that_was_used_during_build
+```
+
+**to bind during running the docker add port by 
+-p inside_container_port:oustside_port_local_pc use following for container
+name e.g. web-server** </br>
+
+```dj
+docker run -d --name web-server -p 5001:5000 web-server
+```
+
