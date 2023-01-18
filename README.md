@@ -58,19 +58,45 @@ docker build -t container_name . or /path/to/some where
 docker build -t container_name -f or --file Dockerfile_name_if_notusing_the_default_name
 ```
 
-**then run the container**
+**then run the container**</br>
 
 ```dj
 docker run name_of_the_container
 ```
 
 
-**using another build with serverdocker file this time slight chnage in command**
+**using another build with serverdocker file this time slight chnage in command**</br>
 
 ```dj
 docker build --file server.Dockerfile --tag name_of_container .
 ```
 
 **don't use docker run container_name when the container is server or never stops
-otherwise it will hang**
+otherwise it will hang** </br>
 
+**then you need to open another terminal find the docker id
+and kill it like this** </br>
+```dj
+docker ps
+docker kill container_docker_id
+```
+
+**you can type this instead it will run in background**</br>
+```dj
+docker run -d your_server
+```
+
+**docker exec kind of inspect the container** </br>
+**if you want to know the date of container**</br>
+```dj
+docker exec container_id date
+```
+
+**if you want a interactive bash shell for the container like
+we don in postgres use the following command** </br>
+
+** to exit out of the interactive terminal press ctr + d** </br>
+
+```dj
+docker exec --interactive --tty container_id bash
+```
