@@ -133,7 +133,7 @@ docker ps -aq
 **to delete all the container in the list in linux system** </br>
 ```dj
 docker ps -aq | xargs docker rm 
-
+```
 
 **to see all the docker images** </br>
 
@@ -166,3 +166,25 @@ name e.g. web-server** </br>
 docker run -d --name web-server -p 5001:5000 web-server
 ```
 
+## saving data from container
+
+**create and immediately remove container with linux create a file and cat it
+Here the file will be created and immediately will deleted as the image is removed** </br>
+
+
+```dj
+docker run --rm --entrypoint sh ubuntu -c  "echo 'Hello there.' > /tmp/file && cat /tmp/file"
+```
+
+
+**you can use -v or --volume tag and add cotainer_directory:local_directory to save the file even after removing the container** </br>
+
+```dj
+docker run --rm --entrypoint sh -v /tmp/container:/tmp ubuntu -c  "echo 'Hello there.' > /tmp/file && cat /tmp/file"
+```
+
+**you can cat that file like this** </br>
+
+```dj
+cat /tmp/container/file
+```
